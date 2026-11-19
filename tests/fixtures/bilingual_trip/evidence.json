@@ -1,0 +1,181 @@
+{
+  "sources": [
+    {
+      "id": "art-museum-hours",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://example.com/test",
+      "excerpt": "Mondays to Wednesdays, Fridays 10:00am – 6:00pm",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum",
+        "hours": [
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1260
+          ],
+          [
+            600,
+            1260
+          ]
+        ],
+        "holiday_hours": [
+          600,
+          1260
+        ],
+        "special_hours_note": null
+      }
+    },
+    {
+      "id": "art-museum-weekend",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://example.com/test",
+      "excerpt": "Saturdays, Sundays and public holidays 10:00am – 9:00pm",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum"
+      }
+    },
+    {
+      "id": "art-museum-closure",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://example.com/test",
+      "excerpt": "Closed on Thursdays",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum"
+      }
+    },
+    {
+      "id": "art-museum-admission",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://example.com/test",
+      "excerpt": "Free admission (except special exhibitions)",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_visit",
+      "facts": {
+        "place_id": "art-museum",
+        "price_cents": 0,
+        "scope": "general admission"
+      }
+    },
+    {
+      "id": "mei-ho-house-room",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://example.com/test",
+      "excerpt": "Twin Room Check-in : After 03:00PM Check-out : Before 11:00AM",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": "room_night",
+      "facts": {
+        "place_id": "mei-ho-house",
+        "room_capacity": 2,
+        "price_cents": null
+      }
+    },
+    {
+      "id": "mei-ho-house-check_in",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://example.com/test",
+      "excerpt": "Check-in : After 03:00PM",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mei-ho-house",
+        "check_in": 900
+      }
+    },
+    {
+      "id": "mei-ho-house-check_out",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://example.com/test",
+      "excerpt": "Check-out : Before 11:00AM",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mei-ho-house",
+        "check_out": 660
+      }
+    },
+    {
+      "id": "hk-holidays",
+      "category": "calendar",
+      "facts": {
+        "dates_checked": [
+          "2026-11-21",
+          "2026-11-22"
+        ],
+        "holidays": {}
+      },
+      "url": "https://example.test/public-holidays",
+      "title": "Hong Kong public holidays",
+      "excerpt": "No holidays during the sample trip.",
+      "fetched_at": "2026-11-19T20:00:00+00:00"
+    },
+    {
+      "id": "mtr-airport-tsing-yi",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://example.com/test",
+      "excerpt": "ST_FROM=Airport, ST_TO=TsingYi, OCT_ADT_FARE=66.50",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Airport",
+        "destination": "Tsing Yi",
+        "price_cents": 6650,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-airport",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://example.com/test",
+      "excerpt": "ST_FROM=TsingYi, ST_TO=Airport, OCT_ADT_FARE=66.50",
+      "fetched_at": "2026-11-19T12:00:00+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Airport",
+        "price_cents": 6650,
+        "airport_express": true
+      }
+    }
+  ],
+  "source_errors": []
+}
