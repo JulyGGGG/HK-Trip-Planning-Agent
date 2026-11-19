@@ -155,7 +155,7 @@ def preflight(values, release, python, runtime_dirs):
 import os
 from pathlib import Path
 import sys
-from paramiko import SSHClient
+from paramiko import HostKeys
 from trip.controller import TripWorker
 from trip.settings import gateway_host_key_name, tcloud_identity
 from trip.ui import form_fields
@@ -164,9 +164,8 @@ if not os.access(os.environ["TCLOUD_BIN"], os.X_OK):
     sys.exit("The service user cannot execute TCLOUD_BIN")
 if not os.access(tcloud_identity().key, os.R_OK):
     sys.exit("The service user cannot read its configured tcloud key")
-client = SSHClient()
-client.load_system_host_keys()
-if not client.get_host_keys().lookup(gateway_host_key_name()):
+known_hosts = Path.home() / ".ssh" / "known_hosts"
+if not known_hosts.is_file() or not HostKeys(str(known_hosts)).lookup(gateway_host_key_name()):
     sys.exit("Add the verified TACC gateway key to the service user's known_hosts")
 for path in sys.argv[1:]:
     if not Path(path).is_dir() or not os.access(path, os.W_OK | os.X_OK):
