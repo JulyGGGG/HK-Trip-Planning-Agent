@@ -18,7 +18,7 @@ sudo ./install.sh
 
 默认安装目录是 `/opt/hk-trip-planner`，服务用户为 `root`。网页和 API 默认监听所有 IPv4 网卡。宿主机用 `http://<linux-ip>:8501/` 打开网页，用 `http://<linux-ip>:8766/api/health` 检查 API。只需本机访问时，可将两个绑定地址设为 `127.0.0.1`。能访问 API 的客户端可以提交或取消行程，双端口直连适用于受信任的单用户演示网络。
 
-安装器优先读取 `--config` 指定的文件，其次读取仓库根目录的 `.env.local`，最后读取 `/etc/hk-trip-planner.env`。使用默认值即可连接标准课程环境。路径、端口、TACC 网关与 GPU 排除项可以覆盖，配置示例与本机状态均有明确存放位置。[配置示例](.env.example)
+安装器优先读取 `--config` 指定的文件，其次读取仓库根目录的 `.env.local`，最后读取 `/etc/hk-trip-planner.env`。使用默认值即可连接标准课程环境。路径、端口、TACC 网关和 GPU 排除项可以覆盖。控制端依赖源默认为 PyPI，可通过 `HK_TRIP_PIP_INDEX_URL` 指定镜像。[配置示例](.env.example)
 
 ## Linux deployment
 
@@ -26,7 +26,7 @@ On a Linux controller running systemd, install Git, Python 3.8 or newer with its
 
 Run the commands above. The installer defaults to `/opt/hk-trip-planner` and the `root` service user. Use `http://<linux-ip>:8501/` for the app and `http://<linux-ip>:8766/api/health` for the API health check. Both listeners default to all IPv4 interfaces. Set both bind values to `127.0.0.1` for local-only access. Clients that can reach the API can submit or cancel trips.
 
-The installer reads an explicit `--config` first, then `.env.local` in the checkout, then `/etc/hk-trip-planner.env`. Settings use literal `KEY=value` lines with optional comment lines beginning with `#`. The optional gateway overrides apply to verified SSH accounting and artifact retrieval. The course SDK uses its own gateway and identity settings. [Configuration example](.env.example)
+The installer reads an explicit `--config` first, then `.env.local` in the checkout, then `/etc/hk-trip-planner.env`. Settings use literal `KEY=value` lines with optional comment lines beginning with `#`. Use `HK_TRIP_PIP_INDEX_URL` to replace PyPI with a controller dependency mirror. The optional gateway overrides apply to verified SSH accounting and artifact retrieval. The course SDK uses its own gateway and identity settings. [Configuration example](.env.example)
 
 ## 升级和检查 · Updates and checks
 

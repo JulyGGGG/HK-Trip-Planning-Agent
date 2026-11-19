@@ -15,6 +15,7 @@ DEFAULTS = {
     "HK_TRIP_UI_BIND": "0.0.0.0",
     "HK_TRIP_UI_PORT": "8501",
     "TCLOUD_BIN": "tcloud",
+    "HK_TRIP_PIP_INDEX_URL": "https://pypi.org/simple",
     "TACC_GATEWAY_HOST": "gw.turing.ust.hk",
     "TACC_GATEWAY_PORT": "30041",
     "TACC_COURSE_ROOT": "/mnt/home/public/course-envs/CSIT6000V",

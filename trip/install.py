@@ -129,7 +129,7 @@ def write_release(directory, files):
         source.rename(directory)
 
 
-def prepare_venv(root, release):
+def prepare_venv(root, release, index_url):
     requirements = release / "trip" / "requirements-control.txt"
     version = hashlib.sha256(requirements.read_bytes()).hexdigest()[:12]
     runtime = root / "venvs" / f"py{sys.version_info.major}.{sys.version_info.minor}-{version}"
@@ -138,7 +138,8 @@ def prepare_venv(root, release):
     if not ready.is_file() or not python.is_file():
         subprocess.run([sys.executable, "-m", "venv", str(runtime)], check=True)
         subprocess.run([str(python), "-m", "pip", "install", "--disable-pip-version-check",
-                        "--timeout", "20", "--retries", "2", "-r", str(requirements)], check=True)
+                        "--index-url", index_url, "--timeout", "20", "--retries", "2",
+                        "-r", str(requirements)], check=True)
         subprocess.run([str(python), "-m", "pip", "check"], check=True)
         ready.touch()
     return python
@@ -268,7 +269,7 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             release = root / "releases" / version
             write_release(release, files)
-            python = prepare_venv(root, release)
+            python = prepare_venv(root, release, values["HK_TRIP_PIP_INDEX_URL"])
             preflight(values, release, python, (root / "data", root / "staging"))
             activate(root, release, unit_contents(values, root, python), values)
         print(f"Active release {version} in {root}")
