@@ -65,10 +65,11 @@ def systemd_value(value):
 
 
 def unit_contents(values, root, python):
+    working_directory = str(root / "current").replace("%", "%%")
     common = (
         "[Service]\nType=simple\nUMask=0077\n"
         f"User={values['HK_TRIP_SERVICE_USER']}\n"
-        f"WorkingDirectory={systemd_value(root / 'current')}\n"
+        f"WorkingDirectory={working_directory}\n"
         "Restart=on-failure\nRestartSec=3\n"
     )
     shared_env = {"HK_TRIP_API_PORT": values["HK_TRIP_API_PORT"], "PYTHONUNBUFFERED": "1"}

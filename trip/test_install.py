@@ -35,7 +35,7 @@ class InstallerCase(unittest.TestCase):
         values = dict(DEFAULTS, HK_TRIP_API_PORT="18766", HK_TRIP_UI_PORT="18501")
         root = Path("/srv/trip demo")
         api, ui = install.unit_contents(values, root, root / "venvs/bin/python").values()
-        self.assertIn('WorkingDirectory="/srv/trip demo/current"', api)
+        self.assertIn("WorkingDirectory=/srv/trip demo/current\n", api)
         self.assertIn('--data-dir "/srv/trip demo/data"', api)
         for unit in (api, ui):
             self.assertIn('Environment="HK_TRIP_API_PORT=18766"', unit)
