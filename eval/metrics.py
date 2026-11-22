@@ -66,8 +66,25 @@ def round_feedback(rows):
 
 
 def conflict_kinds(itinerary):
-    conflicts = (itinerary or {}).get("conflicts") or []
-    return [item.get("kind") for item in conflicts if isinstance(item, dict)]
+    """Machine-readable conflict keys.
+
+    ``itinerary.json`` stores two views of every message: ``conflicts`` holds the
+    localised text for humans, and ``messages.conflicts`` holds ``{"key", "values"}``
+    specs for programs. Read the specs first and fall back to an empty list so an
+    older artifact without ``messages`` simply reports no kinds.
+    """
+    return _message_keys(itinerary, "conflicts")
+
+
+def unknown_kinds(itinerary):
+    return _message_keys(itinerary, "unknowns")
+
+
+def _message_keys(itinerary, group):
+    messages = (itinerary or {}).get("messages") or {}
+    specs = messages.get(group) or []
+    return [item["key"] for item in specs
+            if isinstance(item, dict) and isinstance(item.get("key"), str)]
 
 
 def budget_summary(itinerary):
@@ -121,6 +138,7 @@ def summarize(case, state=None, artifacts=None):
         "conflicts": len(conflict_kinds(itinerary)),
         "conflict_kinds": ",".join(conflict_kinds(itinerary)),
         "unknowns": len((itinerary or {}).get("unknowns") or []),
+        "unknown_kinds": ",".join(unknown_kinds(itinerary)),
         "first_round_conflicts": first.get("conflicts"),
         "first_round_kinds": ",".join(first.get("kinds") or []),
         "repair_rounds": metrics.get("repair_rounds"),

@@ -9,16 +9,18 @@ import json
 from pathlib import Path
 import unittest
 
-from eval.metrics import aggregate, budget_summary, check, round_feedback, summarize, trace_rows
+from eval.metrics import (aggregate, budget_summary, check, conflict_kinds, round_feedback,
+                          summarize, trace_rows, unknown_kinds)
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "sample_run"
+INFEASIBLE = Path(__file__).resolve().parent / "fixtures" / "infeasible_run"
 CASES = Path(__file__).resolve().parent / "cases.json"
 
 
-def load_fixture():
+def load_fixture(directory=FIXTURES):
     artifacts = {}
     for name in ("itinerary.json", "evidence.json", "metrics.json", "trace.jsonl", "report.md"):
-        path = FIXTURES / name
+        path = directory / name
         if path.is_file():
             artifacts[name] = path.read_text(encoding="utf-8")
     return artifacts
@@ -61,6 +63,32 @@ class CaseFileTest(unittest.TestCase):
             from datetime import date
             span = (date.fromisoformat(end) - date.fromisoformat(start)).days
             self.assertTrue(1 <= span <= 3, "%s spans %s days" % (case["id"], span))
+
+
+class InfeasibleRunTest(unittest.TestCase):
+    """A recorded 1 HKD run: the plan must be CONFLICTS with an over_budget key."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.artifacts = load_fixture(INFEASIBLE)
+        cls.itinerary = json.loads(cls.artifacts["itinerary.json"])
+
+    def test_conflict_keys_are_read_from_messages(self):
+        self.assertEqual(conflict_kinds(self.itinerary), ["over_budget"])
+        self.assertEqual(unknown_kinds(self.itinerary), ["room_terms"])
+
+    def test_over_budget_expectation_passes(self):
+        case = {"id": "F01", "category": "infeasible",
+                "expect": {"conflict_kinds_include": ["over_budget"]}}
+        state = {"run_id": "fixture-f01", "attempt_id": "a1", "status": "SUCCEEDED"}
+        record = summarize(case, state, self.artifacts)
+        self.assertEqual(record["plan_status"], "CONFLICTS")
+        self.assertEqual(record["conflict_kinds"], "over_budget")
+        self.assertEqual(record["verdict"], "pass")
+
+    def test_budget_lower_bound_is_visible(self):
+        self.assertEqual(self.itinerary["budget"]["limit_cents"], 100)
+        self.assertGreater(self.itinerary["budget"]["priced_subtotal_cents"], 100)
 
 
 class RecordedRunTest(unittest.TestCase):
