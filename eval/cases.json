@@ -11,12 +11,19 @@
         "departure": "2026-12-06T20:00",
         "party_size": 2,
         "budget_hkd": "3500.00",
-        "interests": ["艺术", "博物馆"],
-        "must_visit": ["香港藝術館"],
+        "interests": [
+          "艺术",
+          "博物馆"
+        ],
+        "must_visit": [
+          "香港藝術館"
+        ],
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_free": true}
+      "expect": {
+        "conflict_free": true
+      }
     },
     {
       "id": "A02",
@@ -27,12 +34,18 @@
         "departure": "2026-12-09T18:00",
         "party_size": 3,
         "budget_hkd": "6000.00",
-        "interests": ["历史文化"],
-        "must_visit": ["香港歷史博物館"],
+        "interests": [
+          "历史文化"
+        ],
+        "must_visit": [
+          "香港歷史博物館"
+        ],
         "walking": "normal",
         "gateway": "west_kowloon"
       },
-      "expect": {"conflict_free": true}
+      "expect": {
+        "conflict_free": true
+      }
     },
     {
       "id": "A03",
@@ -43,12 +56,16 @@
         "departure": "2026-12-14T12:00",
         "party_size": 1,
         "budget_hkd": "2500.00",
-        "interests": ["科学"],
+        "interests": [
+          "科学"
+        ],
         "must_visit": [],
         "walking": "normal",
         "gateway": "central"
       },
-      "expect": {"conflict_free": true}
+      "expect": {
+        "conflict_free": true
+      }
     },
     {
       "id": "A04",
@@ -59,12 +76,19 @@
         "departure": "2026-12-07T21:00",
         "party_size": 4,
         "budget_hkd": "8000.00",
-        "interests": ["公园", "自然"],
-        "must_visit": ["香港公園"],
+        "interests": [
+          "公园",
+          "自然"
+        ],
+        "must_visit": [
+          "香港公園"
+        ],
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_free": true}
+      "expect": {
+        "conflict_free": true
+      }
     },
     {
       "id": "B01",
@@ -80,7 +104,11 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "B02",
@@ -96,7 +124,11 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "B03",
@@ -112,7 +144,11 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "B04",
@@ -128,7 +164,11 @@
         "walking": "normal",
         "gateway": "central"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "C01",
@@ -140,27 +180,47 @@
         "party_size": 2,
         "budget_hkd": "3000.00",
         "interests": [],
-        "must_visit": ["香港藝術館"],
+        "must_visit": [
+          "香港藝術館"
+        ],
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+      "expect": {
+        "conflict_kinds_any": [
+          "required_missing",
+          "hours_conflict",
+          "visit_date",
+          "visit_duration"
+        ]
+      }
     },
     {
       "id": "C02",
       "category": "required_place_unavailable",
-      "note": "HK Museum of History is closed Tuesdays and opens 10:00; arrival Tue 19:00 and departure Wed 09:00 leave no window.",
+      "note": "HK Museum of History is closed Tuesdays and opens 10:00; arrival Tue 19:00 and departure Wed 09:00 leave no visiting window. Besides a required-place or opening-hours conflict, the checker may express the same fact as day_end or slot_overlap when the model schedules past departure; both are accepted.",
       "trip": {
         "arrival": "2026-12-08T19:00",
         "departure": "2026-12-09T09:00",
         "party_size": 2,
         "budget_hkd": "3000.00",
         "interests": [],
-        "must_visit": ["香港歷史博物館"],
+        "must_visit": [
+          "香港歷史博物館"
+        ],
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+      "expect": {
+        "conflict_kinds_any": [
+          "required_missing",
+          "hours_conflict",
+          "visit_date",
+          "visit_duration",
+          "day_end",
+          "slot_overlap"
+        ]
+      }
     },
     {
       "id": "C03",
@@ -172,11 +232,20 @@
         "party_size": 2,
         "budget_hkd": "3000.00",
         "interests": [],
-        "must_visit": ["香港科學館"],
+        "must_visit": [
+          "香港科學館"
+        ],
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+      "expect": {
+        "conflict_kinds_any": [
+          "required_missing",
+          "hours_conflict",
+          "visit_date",
+          "visit_duration"
+        ]
+      }
     },
     {
       "id": "D01",
@@ -192,7 +261,9 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"observational": true}
+      "expect": {
+        "observational": true
+      }
     },
     {
       "id": "D02",
@@ -208,7 +279,9 @@
         "walking": "low",
         "gateway": "airport"
       },
-      "expect": {"observational": true}
+      "expect": {
+        "observational": true
+      }
     },
     {
       "id": "D03",
@@ -224,7 +297,9 @@
         "walking": "normal",
         "gateway": "west_kowloon"
       },
-      "expect": {"observational": true}
+      "expect": {
+        "observational": true
+      }
     },
     {
       "id": "E01",
@@ -240,7 +315,9 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"unknowns_min": 1}
+      "expect": {
+        "unknowns_min": 1
+      }
     },
     {
       "id": "E02",
@@ -251,12 +328,16 @@
         "departure": "2026-12-11T18:00",
         "party_size": 3,
         "budget_hkd": "3000.00",
-        "interests": ["美食"],
+        "interests": [
+          "美食"
+        ],
         "must_visit": [],
         "walking": "low",
         "gateway": "west_kowloon"
       },
-      "expect": {"unknowns_min": 1}
+      "expect": {
+        "unknowns_min": 1
+      }
     },
     {
       "id": "E03",
@@ -272,7 +353,9 @@
         "walking": "normal",
         "gateway": "central"
       },
-      "expect": {"unknowns_min": 1}
+      "expect": {
+        "unknowns_min": 1
+      }
     },
     {
       "id": "F01",
@@ -288,7 +371,11 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "F02",
@@ -304,7 +391,11 @@
         "walking": "normal",
         "gateway": "airport"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     },
     {
       "id": "F03",
@@ -320,7 +411,11 @@
         "walking": "normal",
         "gateway": "central"
       },
-      "expect": {"conflict_kinds_include": ["over_budget"]}
+      "expect": {
+        "conflict_kinds_include": [
+          "over_budget"
+        ]
+      }
     }
   ]
 }

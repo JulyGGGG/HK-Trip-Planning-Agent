@@ -178,6 +178,21 @@ workflow       120.3 秒，step 125 秒，峰值内存 1.1 GB
 evidence       抓取 70 条官方记录，报告引用 24 条
 ```
 
+### 客户端截图
+
+`docs/screenshots/` 存放项目报告使用的界面截图：
+
+| 文件 | 内容 |
+| --- | --- |
+| `01-input-form.png` | 行程表单：日期、抵离时间、抵离地点、人数、预算、兴趣、必去地点、步行偏好 |
+| `02-itinerary.png` | 按天行程：时间、换乘与估算标记 |
+| `03-budget-summary.png` | 预算总览：上限、已计及估算小计、晚数 |
+| `04-budget-items.png` | 逐项预算：数量、金额、依据 |
+| `05-sources.png` | 官方来源：原文摘录与抓取时间 |
+| `06-conflict-case.png` | 不可行案例：1 港币预算对 988.60 港币已计支出，附冲突横幅 |
+| `07-conflict-budget.png` | 同一案例的逐项预算 |
+| `08-itinerary-en.png` | 同一行程的英文界面 |
+
 ## 详细说明
 
 ### 仓库测试
@@ -259,7 +274,7 @@ python -B -m eval.run_eval --limit 6
 * **空闲会被回收。** 控制端在无待办任务 180 秒后取消 allocation 以释放 GPU（`trip/controller.py` 的 `IDLE_SECONDS`），下次提交重新支付冷启动。
 * **allocation 时长。** 课程分区单作业上限 60 分钟，supervisor 在 45 分钟后停止接收新 step，因此 20 条用例可能跨两个 allocation。
 * **并发。** supervisor 同时最多运行 2 个行程 step，其余停留在 `WAITING_MODEL`。
-* **住宿价格未公开。** YHA 页面只列房型不给夜价，因此过夜行程通常以 `INSUFFICIENT_EVIDENCE`（含 `room_terms`）结束，而不是 `FEASIBLE_WITH_ESTIMATES`。这是设计行为：系统只报告能核实的内容。
+* **住宿价格未公开。** YHA 页面只列房型不给夜价，因此过夜行程通常以 `INSUFFICIENT_EVIDENCE`（含 `room_terms`）结束，而不是 `FEASIBLE_WITH_ESTIMATES`。住宿一项也没有金额，因此**不计入已计小计，预算校验无法验证这笔最大开支**。这是设计行为：系统只报告能核实的内容，不猜测房价。
 * **计算节点无法访问 `hf-mirror.com`。** 新账号若不按第 3 步预置 MiniLM 快照（或把 `STORM_EMBEDDING_SOURCE` 指向 TACC 上可读目录），环境搭建会失败。
 * **官方页面会变。** 车费、开放时间、闭馆日都是实时抓取。运营方改版后，原本通过的用例可能合理地改变结论——因此每条引用都记录 `fetched_at` 与原文摘录。
 * **模型波动。** Qwen 以 `temperature=0` 调用，但 vLLM 的批处理与前缀缓存仍可能造成 token 级差异，具体行程可能不同；硬约束结论应保持稳定，所选地点与时段不保证。

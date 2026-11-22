@@ -201,6 +201,21 @@ workflow       120.3 s, step 125 s, peak RSS 1.1 GB
 evidence       70 official records fetched, 24 cited in the report
 ```
 
+### Client screenshots
+
+`docs/screenshots/` holds the interface states used in the project report:
+
+| File | Shows |
+| --- | --- |
+| `01-input-form.png` | Trip form: dates, arrival/departure times, gateway, party size, budget, interests, must-visit places, walking preference |
+| `02-itinerary.png` | Day-by-day itinerary with times, transfers and estimate markers |
+| `03-budget-summary.png` | Budget totals: limit, priced subtotal, nights |
+| `04-budget-items.png` | Itemised budget with quantity, amount and evidence column |
+| `05-sources.png` | Official sources with the quoted excerpt and fetch time |
+| `06-conflict-case.png` | Infeasible case: HKD 1.00 budget against HKD 988.60 of priced items, with the conflict banner |
+| `07-conflict-budget.png` | The same infeasible case, itemised budget |
+| `08-itinerary-en.png` | English interface for the same itinerary |
+
 ## Detailed Instructions
 
 ### Repository tests
@@ -287,7 +302,7 @@ The evaluation deliberately measures repair **within one run** (first draft vers
 * **Idle allocations are reclaimed.** The controller cancels a ready allocation after 180 seconds without pending work (`IDLE_SECONDS` in `trip/controller.py`) to release GPUs. The next submission pays the cold start again.
 * **Allocation lifetime.** The course partition allows 60 minutes per job; the supervisor stops admitting new steps after 45 minutes. A full 20-case suite can therefore span two allocations.
 * **Concurrency.** The supervisor runs at most two trip steps at once; additional submissions stay in `WAITING_MODEL`.
-* **Lodging prices are not published.** The YHA page lists room types but no nightly rate, so overnight trips normally end as `INSUFFICIENT_EVIDENCE` with a `room_terms` unknown rather than `FEASIBLE_WITH_ESTIMATES`. This is intended behaviour: the system reports what it could verify.
+* **Lodging prices are not published.** The YHA page lists room types but no nightly rate, so overnight trips normally end as `INSUFFICIENT_EVIDENCE` with a `room_terms` unknown rather than `FEASIBLE_WITH_ESTIMATES`. The room charge also carries no amount, so it is excluded from the priced subtotal and **the budget check cannot validate the largest expense**. This is intended behaviour: the system reports what it could verify instead of guessing a rate.
 * **Compute nodes cannot reach `hf-mirror.com`.** The setup step would fail on a fresh account unless the MiniLM snapshot is pre-staged as in step 3, or `STORM_EMBEDDING_SOURCE` points at a readable directory on TACC.
 * **Official pages change.** Fares, opening hours and closure days are fetched live. If an operator revises a page, a previously passing case can legitimately change verdict; that is why every citation records `fetched_at` and the source excerpt.
 * **Model variation.** Qwen is called with `temperature=0`, but vLLM batching and prefix caching can still alter token-level output, so the exact itinerary may differ between runs. Hard-constraint verdicts should be stable; the chosen places and times may not be.
