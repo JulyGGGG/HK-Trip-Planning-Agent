@@ -281,6 +281,57 @@ Outputs (all written under `--out`):
 
 Runtime: about 2 minutes per trip step once the model is warm, so 20 cases take roughly 25–40 minutes including one cold start. The controller drains an allocation after 45 minutes and keeps two CPU steps in flight, so a full suite may span two allocations.
 
+### Recorded results
+
+All 20 cases were run against one course Qwen instance. `eval/runs.json` maps every
+case to the run that produced it, so the table can be rebuilt without spending GPU
+time:
+
+```bash
+python -B -m eval.replay --runs eval/runs.json --out eval/results
+```
+
+The outputs of the recorded suite are committed under `eval/recorded/`
+(`summary.json`, `results.csv`, `results.jsonl`).
+
+| Category | Cases | Scored | Passed | What the run showed |
+| --- | --- | --- | --- | --- |
+| `ordinary` | 4 | 4 | 4 | Zero hard conflicts; one unknown each (lodging terms) |
+| `tight_budget` | 4 | 4 | 4 | `over_budget` reported |
+| `required_place_unavailable` | 3 | 3 | 3 | Required place or schedule conflict reported |
+| `restricted_window` | 3 | – | – | Observational, no assertion |
+| `missing_information` | 3 | 3 | 3 | `unknowns >= 1` |
+| `infeasible` | 3 | 3 | 3 | `over_budget` reported |
+
+Aggregates from `summary.json`:
+
+```
+cases 20 · scored 17 · passed 17 · failed 0 · observational 3
+plan status       INSUFFICIENT_EVIDENCE 8 · CONFLICTS 12
+conflict-free     8 cases
+repaired          3 cases (first draft conflicted, final plan clean)
+cost per case     4.0 model calls · 2,968 prompt + 616 completion tokens
+latency           147.0 s workflow · 157.6 s end to end
+citation support  0.815 of budget items carry a source id
+```
+
+Two notes on how these numbers were obtained. One restricted-window attempt was
+rejected with `SERVICE_DRAINING` at the allocation's 45-minute boundary and was
+retried on a fresh allocation; only the retry is included. Model sampling is
+deterministic in temperature but vLLM batching still varies, so the chosen places
+and times can differ between runs; the table measures hard-constraint verdicts,
+which the checks derive deterministically from the published facts.
+
+### Case revisions
+
+* **C02** — the accepted conflict set was widened to include `day_end` and
+  `slot_overlap`. In the recorded run the model scheduled the required museum at
+  10:00–11:00, inside opening hours but **after the 09:00 departure**, so the
+  checker expressed the infeasibility as `day_end`/`slot_overlap` rather than the
+  opening-hours conflict the case originally listed. The fact that the visit
+  cannot fit is unchanged; only the expression the harness accepts was corrected.
+  The case file in the repository is the corrected version.
+
 ### Metrics and where they appear in the report
 
 | Metric (source) | Definition in this artifact | Reported as |

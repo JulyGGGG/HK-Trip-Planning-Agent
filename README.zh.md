@@ -253,6 +253,43 @@ python -B -m eval.run_eval --limit 6
 
 耗时：模型热时每条约 2 分钟，20 条约 25–40 分钟（含一次冷启动）。控制端在 allocation 运行 45 分钟后停止接收新 step，且同时最多 2 个 CPU step，因此完整套件可能跨两个 allocation。
 
+### 实测结果
+
+20 条用例在同一个课程 Qwen 实例上跑完。`eval/runs.json` 记录了每条用例对应的运行号，因此不必再消耗 GPU 时间即可重建下表：
+
+```bash
+python -B -m eval.replay --runs eval/runs.json --out eval/results
+```
+
+该次评测的产物已提交在 `eval/recorded/`（`summary.json`、`results.csv`、`results.jsonl`）。
+
+| 类别 | 用例 | 计分 | 通过 | 实际表现 |
+| --- | --- | --- | --- | --- |
+| `ordinary` | 4 | 4 | 4 | 零硬性冲突；各有一条未知项（住宿条款） |
+| `tight_budget` | 4 | 4 | 4 | 正确报出 `over_budget` |
+| `required_place_unavailable` | 3 | 3 | 3 | 报出必去点或时间冲突 |
+| `restricted_window` | 3 | – | – | 仅观测，不设断言 |
+| `missing_information` | 3 | 3 | 3 | `unknowns >= 1` |
+| `infeasible` | 3 | 3 | 3 | 正确报出 `over_budget` |
+
+`summary.json` 的汇总：
+
+```
+用例 20 · 计分 17 · 通过 17 · 失败 0 · 仅观测 3
+方案状态       INSUFFICIENT_EVIDENCE 8 · CONFLICTS 12
+零冲突         8 条
+修复成功       3 条（首稿有冲突，最终方案无冲突）
+单条成本       4.0 次模型调用 · 2,968 prompt + 616 completion tokens
+耗时           流程 147.0 秒 · 端到端 157.6 秒
+引用支持       81.5% 的预算项带有来源编号
+```
+
+两点说明。有一条时间受限用例在 allocation 第 45 分钟边界被 `SERVICE_DRAINING` 拒绝，随后在新的 allocation 上重跑，表中只计入重跑结果。模型温度固定为 0，但 vLLM 的批处理仍会使具体地点和时段在多次运行间不同；本表衡量的是硬约束判定，而该判定由检查器根据公开事实确定性推导。
+
+### 用例修正记录
+
+* **C02** — 可接受的冲突集合扩充为包含 `day_end` 与 `slot_overlap`。在实测中，模型把必去博物馆排在 10:00–11:00，处于开放时间内，但**已晚于 09:00 的离港时间**，因此检查器用 `day_end`/`slot_overlap` 表达"排不进去"，而不是用例最初列出的开放时间冲突。事实未变，只是修正了测试所接受的表达方式。仓库中的用例文件为修正后的版本。
+
 ### 指标与报告对应关系
 
 | 指标（来源） | 定义 | 报告中的呈现 |

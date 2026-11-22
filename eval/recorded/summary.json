@@ -1,0 +1,58 @@
+{
+  "cases": 20,
+  "scored": 17,
+  "passed": 17,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "observational": 3,
+  "plan_status_counts": {
+    "INSUFFICIENT_EVIDENCE": 8,
+    "CONFLICTS": 12
+  },
+  "conflict_free_cases": 8,
+  "cases_repaired": 3,
+  "mean_model_calls": 4.0,
+  "mean_prompt_tokens": 2968.3,
+  "mean_completion_tokens": 616.1,
+  "mean_workflow_seconds": 147.024,
+  "mean_e2e_seconds": 157.64,
+  "mean_citation_coverage": 0.815,
+  "by_category": {
+    "ordinary": {
+      "cases": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0
+    },
+    "tight_budget": {
+      "cases": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0
+    },
+    "required_place_unavailable": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0
+    },
+    "restricted_window": {
+      "cases": 3,
+      "pass": 0,
+      "fail": 0,
+      "skip": 3
+    },
+    "missing_information": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0
+    },
+    "infeasible": {
+      "cases": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0
+    }
+  }
+}
