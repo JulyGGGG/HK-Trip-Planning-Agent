@@ -1,0 +1,10 @@
+{
+  "model_calls": 3,
+  "successful_model_calls": 3,
+  "search_calls": 1,
+  "repair_rounds": 1,
+  "prompt_tokens": 1876,
+  "completion_tokens": 544,
+  "cache_enabled": false,
+  "workflow_seconds": 120.319
+}

@@ -1,0 +1,1217 @@
+{
+  "schema_version": 1,
+  "queries": {
+    "transport": "MTR fare and route from Hong Kong International Airport to Central 2026",
+    "lodging": "Hotel in Central Hong Kong 2026-11-25 to 2026-11-26 2 guests under 3500 HKD check-in room types",
+    "activities": "Hong Kong Museum of Art opening hours and nearby art museums 2026"
+  },
+  "reused_ids": [],
+  "sources": [
+    {
+      "id": "art-museum-hours",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://hk.art.museum/en/web/ma/visit/opening-hours-and-admission.html",
+      "excerpt": "Mondays to Wednesdays, Fridays 10:00am – 6:00pm",
+      "fetched_at": "2026-11-22T12:38:31.947333+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum",
+        "hours": [
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1260
+          ],
+          [
+            600,
+            1260
+          ]
+        ],
+        "holiday_hours": [
+          600,
+          1260
+        ],
+        "special_hours_note": "Christmas Eve and Lunar New Year's Eve 10:00am – 5:00pm Closed on Thursdays (except public holiday) and the "
+      }
+    },
+    {
+      "id": "art-museum-weekend",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://hk.art.museum/en/web/ma/visit/opening-hours-and-admission.html",
+      "excerpt": "Saturdays, Sundays and public holidays 10:00am – 9:00pm",
+      "fetched_at": "2026-11-22T12:38:31.947333+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum"
+      }
+    },
+    {
+      "id": "art-museum-closure",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://hk.art.museum/en/web/ma/visit/opening-hours-and-admission.html",
+      "excerpt": "Closed on Thursdays",
+      "fetched_at": "2026-11-22T12:38:31.947333+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "art-museum"
+      }
+    },
+    {
+      "id": "art-museum-admission",
+      "category": "activities",
+      "title": "香港藝術館",
+      "url": "https://hk.art.museum/en/web/ma/visit/opening-hours-and-admission.html",
+      "excerpt": "Free admission (except special exhibitions)",
+      "fetched_at": "2026-11-22T12:38:31.947333+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_visit",
+      "facts": {
+        "place_id": "art-museum",
+        "price_cents": 0,
+        "scope": "general admission"
+      }
+    },
+    {
+      "id": "history-museum-hours",
+      "category": "activities",
+      "title": "香港歷史博物館",
+      "url": "https://hk.history.museum/en/web/mh/plan-your-visit/admission.html",
+      "excerpt": "Mondays, Wednesdays to Fridays : 10am - 6pm",
+      "fetched_at": "2026-11-22T12:38:31.921267+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "history-museum",
+        "hours": [
+          [
+            600,
+            1080
+          ],
+          [],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1080
+          ],
+          [
+            600,
+            1140
+          ],
+          [
+            600,
+            1140
+          ]
+        ],
+        "holiday_hours": [
+          600,
+          1140
+        ],
+        "special_hours_note": "Christmas Eve and Chinese New Year's Eve : 10am - 5pm (except closed days) Closed on Tuesdays (except public"
+      }
+    },
+    {
+      "id": "history-museum-weekend",
+      "category": "activities",
+      "title": "香港歷史博物館",
+      "url": "https://hk.history.museum/en/web/mh/plan-your-visit/admission.html",
+      "excerpt": "Saturdays, Sundays and public holidays : 10am - 7pm",
+      "fetched_at": "2026-11-22T12:38:31.921267+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "history-museum"
+      }
+    },
+    {
+      "id": "history-museum-closure",
+      "category": "activities",
+      "title": "香港歷史博物館",
+      "url": "https://hk.history.museum/en/web/mh/plan-your-visit/admission.html",
+      "excerpt": "Closed on Tuesdays",
+      "fetched_at": "2026-11-22T12:38:31.921267+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "history-museum"
+      }
+    },
+    {
+      "id": "history-museum-admission",
+      "category": "activities",
+      "title": "香港歷史博物館",
+      "url": "https://hk.history.museum/en/web/mh/plan-your-visit/admission.html",
+      "excerpt": "'Hong Kong Story' Permanent Exhibition: Free",
+      "fetched_at": "2026-11-22T12:38:31.921267+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_visit",
+      "facts": {
+        "place_id": "history-museum",
+        "price_cents": 0,
+        "scope": "general admission"
+      }
+    },
+    {
+      "id": "science-museum-hours",
+      "category": "activities",
+      "title": "香港科學館",
+      "url": "https://hk.science.museum/en/web/scm/visit.html",
+      "excerpt": "Mondays, Tuesdays, Wednesdays and Fridays 10am – 7pm",
+      "fetched_at": "2026-11-22T12:38:34.929728+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "science-museum",
+        "hours": [
+          [
+            600,
+            1140
+          ],
+          [
+            600,
+            1140
+          ],
+          [
+            600,
+            1140
+          ],
+          [],
+          [
+            600,
+            1140
+          ],
+          [
+            600,
+            1260
+          ],
+          [
+            600,
+            1260
+          ]
+        ],
+        "holiday_hours": [
+          600,
+          1260
+        ],
+        "special_hours_note": "Christmas Eve and Chinese New Year's Eve Museum Real-time Crowd Level Latest Arrangement and Measures Please"
+      }
+    },
+    {
+      "id": "science-museum-weekend",
+      "category": "activities",
+      "title": "香港科學館",
+      "url": "https://hk.science.museum/en/web/scm/visit.html",
+      "excerpt": "Saturdays, Sundays and public holidays 10am – 9pm",
+      "fetched_at": "2026-11-22T12:38:34.929728+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "science-museum"
+      }
+    },
+    {
+      "id": "science-museum-closure",
+      "category": "activities",
+      "title": "香港科學館",
+      "url": "https://hk.science.museum/en/web/scm/visit.html",
+      "excerpt": "Closed on Thursdays",
+      "fetched_at": "2026-11-22T12:38:34.929728+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "science-museum"
+      }
+    },
+    {
+      "id": "science-museum-admission",
+      "category": "activities",
+      "title": "香港科學館",
+      "url": "https://hk.science.museum/en/web/scm/visit.html",
+      "excerpt": "Permanent Exhibition Standard $20",
+      "fetched_at": "2026-11-22T12:38:34.929728+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_visit",
+      "facts": {
+        "place_id": "science-museum",
+        "price_cents": 2000
+      }
+    },
+    {
+      "id": "science-museum-free-day",
+      "category": "activities",
+      "title": "香港科學館",
+      "url": "https://hk.science.museum/en/web/scm/visit.html",
+      "excerpt": "Free admission to Permanent Exhibition on Wednesdays",
+      "fetched_at": "2026-11-22T12:38:34.929728+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "science-museum",
+        "free_weekday": 2
+      }
+    },
+    {
+      "id": "hong-kong-park-hours",
+      "category": "activities",
+      "title": "香港公園",
+      "url": "https://hkp.lcsd.gov.hk/en/visit",
+      "excerpt": "Park (outdoor facilities) 06:00 - 23:00",
+      "fetched_at": "2026-11-22T12:38:32.116862+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "hong-kong-park",
+        "hours": [
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ],
+          [
+            360,
+            1380
+          ]
+        ],
+        "holiday_hours": [
+          360,
+          1380
+        ],
+        "scope": "outdoor park"
+      }
+    },
+    {
+      "id": "hong-kong-park-admission",
+      "category": "activities",
+      "title": "香港公園",
+      "url": "https://hkp.lcsd.gov.hk/en/visit",
+      "excerpt": "Admission Fee Free Except Sports Centre and Squash Centre",
+      "fetched_at": "2026-11-22T12:38:32.116862+00:00",
+      "source_last_modified": null,
+      "price_unit": "person_visit",
+      "facts": {
+        "place_id": "hong-kong-park",
+        "price_cents": 0,
+        "scope": "general admission"
+      }
+    },
+    {
+      "id": "mei-ho-house-room",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/yha-mei-ho-house-youth-hostel/",
+      "excerpt": "ere ACCOMMODATION Twin Room Double Room Themed Twin Room Themed Double Room Triple Room with 1 Double Bed and 1 Single Bed Triple Room with 3 Single Beds Family Room Themed",
+      "fetched_at": "2026-11-22T12:38:33.160805+00:00",
+      "source_last_modified": null,
+      "price_unit": "room_night",
+      "facts": {
+        "place_id": "mei-ho-house",
+        "room_capacity": 2,
+        "price_cents": null
+      }
+    },
+    {
+      "id": "mei-ho-house-check_in",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/yha-mei-ho-house-youth-hostel/",
+      "excerpt": "Check-in : After 03:00PM",
+      "fetched_at": "2026-11-22T12:38:33.160805+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mei-ho-house",
+        "check_in": 900
+      }
+    },
+    {
+      "id": "mei-ho-house-check_out",
+      "category": "lodging",
+      "title": "YHA 美荷樓青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/yha-mei-ho-house-youth-hostel/",
+      "excerpt": "Check-out : Before 11:00AM",
+      "fetched_at": "2026-11-22T12:38:33.160805+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mei-ho-house",
+        "check_out": 660
+      }
+    },
+    {
+      "id": "mt-davis-room",
+      "category": "lodging",
+      "title": "YHA 摩星嶺青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/jockey-club-mt-davis-youth-hostel/",
+      "excerpt": "eos ACCOMMODATION Twin Room Double Room Seaview Twin / Double Room Triple Room with 1 Double Bed and 1 Single Bed 4-Person Room with 1 Double Bed and 1 Bunk Bed 4-Person Pr",
+      "fetched_at": "2026-11-22T12:38:32.893059+00:00",
+      "source_last_modified": null,
+      "price_unit": "room_night",
+      "facts": {
+        "place_id": "mt-davis",
+        "room_capacity": 2,
+        "price_cents": null
+      }
+    },
+    {
+      "id": "mt-davis-check_in",
+      "category": "lodging",
+      "title": "YHA 摩星嶺青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/jockey-club-mt-davis-youth-hostel/",
+      "excerpt": "Check-in : 03:00PM",
+      "fetched_at": "2026-11-22T12:38:32.893059+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mt-davis",
+        "check_in": 900
+      }
+    },
+    {
+      "id": "mt-davis-check_out",
+      "category": "lodging",
+      "title": "YHA 摩星嶺青年旅舍",
+      "url": "https://www.yha.org.hk/en/hostel/jockey-club-mt-davis-youth-hostel/",
+      "excerpt": "Check-out : 09:00AM",
+      "fetched_at": "2026-11-22T12:38:32.893059+00:00",
+      "source_last_modified": null,
+      "price_unit": null,
+      "facts": {
+        "place_id": "mt-davis",
+        "check_out": 540
+      }
+    },
+    {
+      "id": "mtr-admiralty-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-admiralty-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Sham Shui Po",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-admiralty-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=4.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Hong Kong",
+        "price_cents": 490,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-admiralty-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Kowloon",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-admiralty-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Tsing Yi",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-admiralty-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Admiralty, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Admiralty",
+        "destination": "Kennedy Town",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Admiralty",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=7.40",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Sham Shui Po",
+        "price_cents": 740,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Hong Kong",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=4.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Kowloon",
+        "price_cents": 490,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=11.00",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Tsing Yi",
+        "price_cents": 1100,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsim-sha-tsui-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsim Sha Tsui, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsim Sha Tsui",
+        "destination": "Kennedy Town",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Admiralty",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=7.40",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 740,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Hong Kong",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Kowloon",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=7.40",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Tsing Yi",
+        "price_cents": 740,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-sham-shui-po-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Sham Shui Po, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Sham Shui Po",
+        "destination": "Kennedy Town",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=4.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Admiralty",
+        "price_cents": 490,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Sham Shui Po",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Kowloon",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Tsing Yi",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-hong-kong-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Hong Kong, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Kennedy Town",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Admiralty",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=4.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 490,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Sham Shui Po",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=10.60",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Hong Kong",
+        "price_cents": 1060,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=11.00",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Tsing Yi",
+        "price_cents": 1100,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kowloon-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kowloon, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Kennedy Town",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Admiralty",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=11.00",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 1100,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=7.40",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Sham Shui Po",
+        "price_cents": 740,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Hong Kong",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=11.00",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Kowloon",
+        "price_cents": 1100,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-kennedy-town",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Tsing Yi, DEST_STATION_NAME=Kennedy Town, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Kennedy Town",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-admiralty",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Admiralty, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Admiralty",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-tsim-sha-tsui",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Tsim Sha Tsui, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Tsim Sha Tsui",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-sham-shui-po",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Sham Shui Po, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Sham Shui Po",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-hong-kong",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Hong Kong, OCT_ADT_FARE=5.90",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Hong Kong",
+        "price_cents": 590,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-kowloon",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Kowloon, OCT_ADT_FARE=13.20",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Kowloon",
+        "price_cents": 1320,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "mtr-kennedy-town-tsing-yi",
+      "category": "transport",
+      "title": "港鐵八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/mtr_lines_fares.csv",
+      "excerpt": "SRC_STATION_NAME=Kennedy Town, DEST_STATION_NAME=Tsing Yi, OCT_ADT_FARE=15.80",
+      "fetched_at": "2026-11-22T12:38:32.148758+00:00",
+      "source_last_modified": "Thu, 02 Apr 2026 17:02:50 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kennedy Town",
+        "destination": "Tsing Yi",
+        "price_cents": 1580,
+        "airport_express": false
+      }
+    },
+    {
+      "id": "hk-holidays",
+      "category": "calendar",
+      "title": "香港公眾假期（1823）",
+      "url": "https://www.1823.gov.hk/common/ical/en.json",
+      "excerpt": "Public holiday calendar checked for 2026-11-25 to 2026-11-26",
+      "fetched_at": "2026-11-22T12:38:31.946544+00:00",
+      "source_last_modified": "Mon, 18 May 2026 02:06:33 GMT",
+      "price_unit": null,
+      "facts": {
+        "dates_checked": [
+          "2026-11-25",
+          "2026-11-26"
+        ],
+        "holidays": {}
+      }
+    },
+    {
+      "id": "mtr-hong-kong-airport",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=HongKong, ST_TO=Airport, OCT_ADT_FARE=120",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Hong Kong",
+        "destination": "Airport",
+        "price_cents": 12000,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-kowloon-airport",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=Kowloon, ST_TO=Airport, OCT_ADT_FARE=105",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Kowloon",
+        "destination": "Airport",
+        "price_cents": 10500,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-tsing-yi-airport",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=Tsing Yi, ST_TO=Airport, OCT_ADT_FARE=73",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Tsing Yi",
+        "destination": "Airport",
+        "price_cents": 7300,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-airport-hong-kong",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=Airport, ST_TO=HongKong, OCT_ADT_FARE=120",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Airport",
+        "destination": "Hong Kong",
+        "price_cents": 12000,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-airport-kowloon",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=Airport, ST_TO=Kowloon, OCT_ADT_FARE=105",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Airport",
+        "destination": "Kowloon",
+        "price_cents": 10500,
+        "airport_express": true
+      }
+    },
+    {
+      "id": "mtr-airport-tsing-yi",
+      "category": "transport",
+      "title": "港鐵機場快綫八達通成人車費",
+      "url": "https://opendata.mtr.com.hk/data/airport_express_fares.csv",
+      "excerpt": "ST_FROM=Airport, ST_TO=Tsing Yi, OCT_ADT_FARE=73",
+      "fetched_at": "2026-11-22T12:38:32.108057+00:00",
+      "source_last_modified": "Sat, 21 Jun 2025 17:05:16 GMT",
+      "price_unit": "person_trip",
+      "facts": {
+        "origin": "Airport",
+        "destination": "Tsing Yi",
+        "price_cents": 7300,
+        "airport_express": true
+      }
+    }
+  ],
+  "source_errors": []
+}

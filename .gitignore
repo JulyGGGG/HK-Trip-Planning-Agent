@@ -21,3 +21,4 @@ __pycache__/
 wheelhouse/
 embedding-model/
 *.bundle
+eval/results/

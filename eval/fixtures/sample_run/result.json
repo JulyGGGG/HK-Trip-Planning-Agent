@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "workflow": "hk_trip",
+  "run_id": "run-380f39447bf7436fad008164",
+  "attempt_id": "a1",
+  "version": 1,
+  "finished_at": "2026-11-22T12:39:00.686728+00:00",
+  "workflow_job_id": "30780",
+  "workflow_step_id": "1",
+  "model_service_id": "qwen-combined-047739c5583b",
+  "artifacts": [
+    {
+      "kind": "report",
+      "path": "report.md",
+      "sha256": "05ad603147e929eb43c72bb7e0a67414f8199a2f25d8195bc1bd4b0a304636a1"
+    },
+    {
+      "kind": "itinerary",
+      "path": "itinerary.json",
+      "sha256": "363aa972d82976fd30202b2e2e43d568ff1f4f37571334c2ed5292a973e68931"
+    },
+    {
+      "kind": "evidence",
+      "path": "evidence.json",
+      "sha256": "c82dc0a633862dae80269132dd4e9ca740c1f9f73e6b50f1c99c2fe4a46bf0e6"
+    },
+    {
+      "kind": "trace",
+      "path": "trace.jsonl",
+      "sha256": "675ed3d30907af49c158292d1e4467d55770853147313621e7b4860982dd0c18"
+    },
+    {
+      "kind": "metrics",
+      "path": "metrics.json",
+      "sha256": "b09fc6fd68aa36a5bd1e4a01dec810b0846c62bd0573547e545185847cfbbb80"
+    },
+    {
+      "kind": "diagnostics",
+      "path": "diagnostics.json",
+      "sha256": "5ba3d7ba4675859281d8ff29aebbd07614304e1054399d2a4fb9e3c17ff0761f"
+    }
+  ],
+  "bundle_sha256": "491c279afc3a542f399b8ed91b0a44dae1d8759347557c87eb346fd9de75d397",
+  "metrics": {
+    "model_calls": 3,
+    "successful_model_calls": 3,
+    "search_calls": 1,
+    "repair_rounds": 1,
+    "prompt_tokens": 1876,
+    "completion_tokens": 544,
+    "cache_enabled": false,
+    "workflow_seconds": 120.319
+  },
+  "workflow_state": "COMPLETED",
+  "plan_status": "INSUFFICIENT_EVIDENCE"
+}

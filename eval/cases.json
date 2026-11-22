@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "description": "Hong Kong trip evaluation cases. Inputs are authored; expected verdicts are derived from published facts (MTR fare tables, museum closing days) rather than from model output.",
+  "cases": [
+    {
+      "id": "A01",
+      "category": "ordinary",
+      "note": "Wide windows, comfortable budget, one required place open on both days.",
+      "trip": {
+        "arrival": "2026-12-04T09:00",
+        "departure": "2026-12-06T20:00",
+        "party_size": 2,
+        "budget_hkd": "3500.00",
+        "interests": ["艺术", "博物馆"],
+        "must_visit": ["香港藝術館"],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_free": true}
+    },
+    {
+      "id": "A02",
+      "category": "ordinary",
+      "note": "West Kowloon arrival, 3 travellers, required history museum open Mon and Wed.",
+      "trip": {
+        "arrival": "2026-12-07T10:00",
+        "departure": "2026-12-09T18:00",
+        "party_size": 3,
+        "budget_hkd": "6000.00",
+        "interests": ["历史文化"],
+        "must_visit": ["香港歷史博物館"],
+        "walking": "normal",
+        "gateway": "west_kowloon"
+      },
+      "expect": {"conflict_free": true}
+    },
+    {
+      "id": "A03",
+      "category": "ordinary",
+      "note": "Four calendar days, single traveller, Central arrival.",
+      "trip": {
+        "arrival": "2026-12-11T09:00",
+        "departure": "2026-12-14T12:00",
+        "party_size": 1,
+        "budget_hkd": "2500.00",
+        "interests": ["科学"],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "central"
+      },
+      "expect": {"conflict_free": true}
+    },
+    {
+      "id": "A04",
+      "category": "ordinary",
+      "note": "Weekend, four travellers, park visit is free and open 06:00-23:00.",
+      "trip": {
+        "arrival": "2026-12-05T12:00",
+        "departure": "2026-12-07T21:00",
+        "party_size": 4,
+        "budget_hkd": "8000.00",
+        "interests": ["公园", "自然"],
+        "must_visit": ["香港公園"],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_free": true}
+    },
+    {
+      "id": "B01",
+      "category": "tight_budget",
+      "note": "HKD 400 for two travellers over two days is below meals (HKD 50/person/meal) plus published fares.",
+      "trip": {
+        "arrival": "2026-12-04T09:00",
+        "departure": "2026-12-06T20:00",
+        "party_size": 2,
+        "budget_hkd": "400.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "B02",
+      "category": "tight_budget",
+      "note": "HKD 300 for two travellers cannot cover meals plus airport rail.",
+      "trip": {
+        "arrival": "2026-12-08T10:00",
+        "departure": "2026-12-10T18:00",
+        "party_size": 2,
+        "budget_hkd": "300.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "B03",
+      "category": "tight_budget",
+      "note": "HKD 900 for four travellers is below 4 x 3 x 50 HKD of meal reserves.",
+      "trip": {
+        "arrival": "2026-12-12T09:00",
+        "departure": "2026-12-14T20:00",
+        "party_size": 4,
+        "budget_hkd": "900.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "B04",
+      "category": "tight_budget",
+      "note": "HKD 150 for one traveller over three days is below meal reserves alone.",
+      "trip": {
+        "arrival": "2026-12-01T09:00",
+        "departure": "2026-12-03T18:00",
+        "party_size": 1,
+        "budget_hkd": "150.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "central"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "C01",
+      "category": "required_place_unavailable",
+      "note": "HK Museum of Art is closed Thursdays and opens at 10:00; arrival Thu 18:00 and departure Fri 10:00 leave no visiting window.",
+      "trip": {
+        "arrival": "2026-12-03T18:00",
+        "departure": "2026-12-04T10:00",
+        "party_size": 2,
+        "budget_hkd": "3000.00",
+        "interests": [],
+        "must_visit": ["香港藝術館"],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+    },
+    {
+      "id": "C02",
+      "category": "required_place_unavailable",
+      "note": "HK Museum of History is closed Tuesdays and opens 10:00; arrival Tue 19:00 and departure Wed 09:00 leave no window.",
+      "trip": {
+        "arrival": "2026-12-08T19:00",
+        "departure": "2026-12-09T09:00",
+        "party_size": 2,
+        "budget_hkd": "3000.00",
+        "interests": [],
+        "must_visit": ["香港歷史博物館"],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+    },
+    {
+      "id": "C03",
+      "category": "required_place_unavailable",
+      "note": "HK Science Museum is closed Thursdays and opens 10:00; arrival Thu 18:00 and departure Fri 09:00 leave no window.",
+      "trip": {
+        "arrival": "2026-12-10T18:00",
+        "departure": "2026-12-11T09:00",
+        "party_size": 2,
+        "budget_hkd": "3000.00",
+        "interests": [],
+        "must_visit": ["香港科學館"],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_any": ["required_missing", "hours_conflict", "visit_date", "visit_duration"]}
+    },
+    {
+      "id": "D01",
+      "category": "restricted_window",
+      "note": "Late-night arrival and pre-dawn departure. Observational: no deterministic expectation is asserted.",
+      "trip": {
+        "arrival": "2026-12-04T21:30",
+        "departure": "2026-12-06T05:30",
+        "party_size": 2,
+        "budget_hkd": "3000.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"observational": true}
+    },
+    {
+      "id": "D02",
+      "category": "restricted_window",
+      "note": "Friday 23:00 to Saturday 06:00 with low walking preference. Observational.",
+      "trip": {
+        "arrival": "2026-12-11T23:00",
+        "departure": "2026-12-12T06:00",
+        "party_size": 1,
+        "budget_hkd": "1500.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "low",
+        "gateway": "airport"
+      },
+      "expect": {"observational": true}
+    },
+    {
+      "id": "D03",
+      "category": "restricted_window",
+      "note": "Just after midnight arrival across three calendar days. Observational.",
+      "trip": {
+        "arrival": "2026-12-07T00:30",
+        "departure": "2026-12-09T23:30",
+        "party_size": 2,
+        "budget_hkd": "4000.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "west_kowloon"
+      },
+      "expect": {"observational": true}
+    },
+    {
+      "id": "E01",
+      "category": "missing_information",
+      "note": "Overnight stay requires a lodging choice; lodging terms are not published, so at least one unknown must be recorded.",
+      "trip": {
+        "arrival": "2026-12-04T09:00",
+        "departure": "2026-12-05T20:00",
+        "party_size": 2,
+        "budget_hkd": "2000.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"unknowns_min": 1}
+    },
+    {
+      "id": "E02",
+      "category": "missing_information",
+      "note": "Two nights, food interest, low walking. Lodging terms remain unverifiable.",
+      "trip": {
+        "arrival": "2026-12-09T10:00",
+        "departure": "2026-12-11T18:00",
+        "party_size": 3,
+        "budget_hkd": "3000.00",
+        "interests": ["美食"],
+        "must_visit": [],
+        "walking": "low",
+        "gateway": "west_kowloon"
+      },
+      "expect": {"unknowns_min": 1}
+    },
+    {
+      "id": "E03",
+      "category": "missing_information",
+      "note": "One night from Central. Lodging terms remain unverifiable.",
+      "trip": {
+        "arrival": "2026-12-12T09:00",
+        "departure": "2026-12-13T20:00",
+        "party_size": 2,
+        "budget_hkd": "2500.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "central"
+      },
+      "expect": {"unknowns_min": 1}
+    },
+    {
+      "id": "F01",
+      "category": "infeasible",
+      "note": "HKD 1.00 cannot cover even one meal reserve.",
+      "trip": {
+        "arrival": "2026-12-04T09:00",
+        "departure": "2026-12-06T20:00",
+        "party_size": 2,
+        "budget_hkd": "1.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "F02",
+      "category": "infeasible",
+      "note": "HKD 120.00 for two travellers is below meal reserves and fares.",
+      "trip": {
+        "arrival": "2026-12-05T10:00",
+        "departure": "2026-12-07T18:00",
+        "party_size": 2,
+        "budget_hkd": "120.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "airport"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    },
+    {
+      "id": "F03",
+      "category": "infeasible",
+      "note": "HKD 50.00 for one traveller over three days is below meal reserves.",
+      "trip": {
+        "arrival": "2026-12-01T09:00",
+        "departure": "2026-12-03T18:00",
+        "party_size": 1,
+        "budget_hkd": "50.00",
+        "interests": [],
+        "must_visit": [],
+        "walking": "normal",
+        "gateway": "central"
+      },
+      "expect": {"conflict_kinds_include": ["over_budget"]}
+    }
+  ]
+}

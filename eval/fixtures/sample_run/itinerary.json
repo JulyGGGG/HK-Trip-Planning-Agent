@@ -1,0 +1,612 @@
+{
+  "status": "INSUFFICIENT_EVIDENCE",
+  "days": [
+    {
+      "date": "2026-11-25",
+      "items": [
+        {
+          "kind": "arrival",
+          "label": "抵达缓冲（估算）",
+          "label_message": {
+            "key": "arrival_buffer",
+            "values": {}
+          },
+          "start": "2026-11-25T09:00+08:00",
+          "end": "2026-11-25T09:45+08:00",
+          "source_ids": []
+        },
+        {
+          "kind": "transfer",
+          "label": "香港国际机场 → 香港藝術館",
+          "label_message": {
+            "key": "connection",
+            "values": {
+              "origin": "airport",
+              "destination": "art-museum"
+            }
+          },
+          "start": "2026-11-25T09:45+08:00",
+          "end": "2026-11-25T10:50+08:00",
+          "source_ids": [
+            "mtr-airport-tsing-yi",
+            "mtr-tsing-yi-tsim-sha-tsui"
+          ],
+          "note": "机场站 → 青衣站、青衣站 → 尖沙咀站，用时为规划估算",
+          "note_message": {
+            "key": "travel_time",
+            "values": {
+              "route": [
+                [
+                  "Airport",
+                  "Tsing Yi"
+                ],
+                [
+                  "Tsing Yi",
+                  "Tsim Sha Tsui"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "kind": "visit",
+          "label": "香港藝術館",
+          "label_message": {
+            "key": "place",
+            "values": {
+              "place": "art-museum"
+            }
+          },
+          "start": "2026-11-25T11:15+08:00",
+          "end": "2026-11-25T13:15+08:00",
+          "source_ids": [
+            "art-museum-hours",
+            "art-museum-weekend",
+            "art-museum-closure",
+            "art-museum-admission",
+            "hk-holidays"
+          ],
+          "place_id": "art-museum",
+          "note": "普通参观，特别展览可能另收费",
+          "note_message": {
+            "key": "visit_note",
+            "values": {}
+          }
+        },
+        {
+          "kind": "transfer",
+          "label": "香港藝術館 → 香港歷史博物館",
+          "label_message": {
+            "key": "connection",
+            "values": {
+              "origin": "art-museum",
+              "destination": "history-museum"
+            }
+          },
+          "start": "2026-11-25T13:15+08:00",
+          "end": "2026-11-25T13:40+08:00",
+          "source_ids": [],
+          "note": "同区步行或短程接驳，用时为规划估算",
+          "note_message": {
+            "key": "travel_time",
+            "values": {
+              "route": []
+            }
+          }
+        },
+        {
+          "kind": "visit",
+          "label": "香港歷史博物館",
+          "label_message": {
+            "key": "place",
+            "values": {
+              "place": "history-museum"
+            }
+          },
+          "start": "2026-11-25T14:15+08:00",
+          "end": "2026-11-25T16:15+08:00",
+          "source_ids": [
+            "history-museum-hours",
+            "history-museum-weekend",
+            "history-museum-closure",
+            "history-museum-admission",
+            "hk-holidays"
+          ],
+          "place_id": "history-museum",
+          "note": "普通参观，特别展览可能另收费",
+          "note_message": {
+            "key": "visit_note",
+            "values": {}
+          }
+        },
+        {
+          "kind": "transfer",
+          "label": "香港歷史博物館 → YHA 美荷樓青年旅舍",
+          "label_message": {
+            "key": "connection",
+            "values": {
+              "origin": "history-museum",
+              "destination": "mei-ho-house"
+            }
+          },
+          "start": "2026-11-25T16:15+08:00",
+          "end": "2026-11-25T17:00+08:00",
+          "source_ids": [
+            "mtr-tsim-sha-tsui-sham-shui-po"
+          ],
+          "note": "尖沙咀站 → 深水埗站，用时为规划估算",
+          "note_message": {
+            "key": "travel_time",
+            "values": {
+              "route": [
+                [
+                  "Tsim Sha Tsui",
+                  "Sham Shui Po"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "kind": "lodging",
+          "label": "办理入住 · YHA 美荷樓青年旅舍",
+          "label_message": {
+            "key": "checkin",
+            "values": {
+              "place": "mei-ho-house"
+            }
+          },
+          "start": "2026-11-25T17:00+08:00",
+          "end": "2026-11-25T17:15+08:00",
+          "source_ids": [
+            "mei-ho-house-room",
+            "mei-ho-house-check_in",
+            "mei-ho-house-check_out"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "items": [
+        {
+          "kind": "lodging",
+          "label": "办理退房，随身携带行李",
+          "label_message": {
+            "key": "checkout",
+            "values": {}
+          },
+          "start": "2026-11-26T09:00+08:00",
+          "end": "2026-11-26T09:10+08:00",
+          "source_ids": [
+            "mei-ho-house-room",
+            "mei-ho-house-check_in",
+            "mei-ho-house-check_out"
+          ]
+        },
+        {
+          "kind": "transfer",
+          "label": "YHA 美荷樓青年旅舍 → 香港公園",
+          "label_message": {
+            "key": "connection",
+            "values": {
+              "origin": "mei-ho-house",
+              "destination": "hong-kong-park"
+            }
+          },
+          "start": "2026-11-26T09:10+08:00",
+          "end": "2026-11-26T09:55+08:00",
+          "source_ids": [
+            "mtr-sham-shui-po-admiralty"
+          ],
+          "note": "深水埗站 → 金钟站，用时为规划估算",
+          "note_message": {
+            "key": "travel_time",
+            "values": {
+              "route": [
+                [
+                  "Sham Shui Po",
+                  "Admiralty"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "kind": "visit",
+          "label": "香港公園",
+          "label_message": {
+            "key": "place",
+            "values": {
+              "place": "hong-kong-park"
+            }
+          },
+          "start": "2026-11-26T10:10+08:00",
+          "end": "2026-11-26T12:10+08:00",
+          "source_ids": [
+            "hong-kong-park-hours",
+            "hong-kong-park-admission",
+            "hk-holidays"
+          ],
+          "place_id": "hong-kong-park",
+          "note": "普通参观，特别展览可能另收费",
+          "note_message": {
+            "key": "visit_note",
+            "values": {}
+          }
+        },
+        {
+          "kind": "transfer",
+          "label": "香港公園 → 香港国际机场",
+          "label_message": {
+            "key": "connection",
+            "values": {
+              "origin": "hong-kong-park",
+              "destination": "airport"
+            }
+          },
+          "start": "2026-11-26T12:10+08:00",
+          "end": "2026-11-26T13:15+08:00",
+          "source_ids": [
+            "mtr-admiralty-hong-kong",
+            "mtr-hong-kong-airport"
+          ],
+          "note": "金钟站 → 香港站、香港站 → 机场站，用时为规划估算",
+          "note_message": {
+            "key": "travel_time",
+            "values": {
+              "route": [
+                [
+                  "Admiralty",
+                  "Hong Kong"
+                ],
+                [
+                  "Hong Kong",
+                  "Airport"
+                ]
+              ]
+            }
+          }
+        },
+        {
+          "kind": "departure",
+          "label": "离港手续缓冲（估算）",
+          "label_message": {
+            "key": "departure_buffer",
+            "values": {}
+          },
+          "start": "2026-11-26T18:00+08:00",
+          "end": "2026-11-26T20:00+08:00",
+          "source_ids": []
+        }
+      ]
+    }
+  ],
+  "budget": {
+    "currency": "HKD",
+    "limit_cents": 350000,
+    "documented_cents": 0,
+    "estimated_cents": 75900,
+    "priced_subtotal_cents": 75900,
+    "nights": 1,
+    "items": [
+      {
+        "label": "YHA 美荷樓青年旅舍 · 1 间 × 1 晚",
+        "label_message": {
+          "key": "room_charge",
+          "values": {
+            "place": "mei-ho-house",
+            "rooms": 1,
+            "nights": 1
+          }
+        },
+        "unit": "间晚",
+        "unit_id": "room_night",
+        "quantity": 1,
+        "unit_cents": null,
+        "total_cents": null,
+        "source_ids": [
+          "mei-ho-house-room"
+        ],
+        "estimated": false
+      },
+      {
+        "label": "机场站 → 青衣站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Airport",
+            "destination": "Tsing Yi"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 7300,
+        "total_cents": 14600,
+        "source_ids": [
+          "mtr-airport-tsing-yi"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "青衣站 → 尖沙咀站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Tsing Yi",
+            "destination": "Tsim Sha Tsui"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 1100,
+        "total_cents": 2200,
+        "source_ids": [
+          "mtr-tsing-yi-tsim-sha-tsui"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "香港藝術館普通参观",
+        "label_message": {
+          "key": "admission_charge",
+          "values": {
+            "place": "art-museum"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "admission",
+        "quantity": 2,
+        "unit_cents": 0,
+        "total_cents": 0,
+        "source_ids": [
+          "art-museum-admission"
+        ],
+        "estimated": false
+      },
+      {
+        "label": "香港歷史博物館普通参观",
+        "label_message": {
+          "key": "admission_charge",
+          "values": {
+            "place": "history-museum"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "admission",
+        "quantity": 2,
+        "unit_cents": 0,
+        "total_cents": 0,
+        "source_ids": [
+          "history-museum-admission"
+        ],
+        "estimated": false
+      },
+      {
+        "label": "尖沙咀站 → 深水埗站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Tsim Sha Tsui",
+            "destination": "Sham Shui Po"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 740,
+        "total_cents": 1480,
+        "source_ids": [
+          "mtr-tsim-sha-tsui-sham-shui-po"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "2026-11-25 餐饮预留",
+        "label_message": {
+          "key": "meals",
+          "values": {
+            "day": "2026-11-25"
+          }
+        },
+        "unit": "人餐",
+        "unit_id": "meal",
+        "quantity": 4,
+        "unit_cents": 5000,
+        "total_cents": 20000,
+        "source_ids": [],
+        "estimated": true
+      },
+      {
+        "label": "深水埗站 → 金钟站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Sham Shui Po",
+            "destination": "Admiralty"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 1320,
+        "total_cents": 2640,
+        "source_ids": [
+          "mtr-sham-shui-po-admiralty"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "香港公園普通参观",
+        "label_message": {
+          "key": "admission_charge",
+          "values": {
+            "place": "hong-kong-park"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "admission",
+        "quantity": 2,
+        "unit_cents": 0,
+        "total_cents": 0,
+        "source_ids": [
+          "hong-kong-park-admission"
+        ],
+        "estimated": false
+      },
+      {
+        "label": "金钟站 → 香港站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Admiralty",
+            "destination": "Hong Kong"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 490,
+        "total_cents": 980,
+        "source_ids": [
+          "mtr-admiralty-hong-kong"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "香港站 → 机场站",
+        "label_message": {
+          "key": "connection",
+          "values": {
+            "origin": "Hong Kong",
+            "destination": "Airport"
+          }
+        },
+        "unit": "人次",
+        "unit_id": "passenger_trip",
+        "quantity": 2,
+        "unit_cents": 12000,
+        "total_cents": 24000,
+        "source_ids": [
+          "mtr-hong-kong-airport"
+        ],
+        "estimated": true
+      },
+      {
+        "label": "2026-11-26 餐饮预留",
+        "label_message": {
+          "key": "meals",
+          "values": {
+            "day": "2026-11-26"
+          }
+        },
+        "unit": "人餐",
+        "unit_id": "meal",
+        "quantity": 2,
+        "unit_cents": 5000,
+        "total_cents": 10000,
+        "source_ids": [],
+        "estimated": true
+      }
+    ]
+  },
+  "alternatives": [
+    {
+      "name": "香港科學館",
+      "name_message": {
+        "key": "place",
+        "values": {
+          "place": "science-museum"
+        }
+      },
+      "source_ids": [
+        "science-museum-hours",
+        "science-museum-weekend",
+        "science-museum-closure",
+        "science-museum-admission",
+        "science-museum-free-day"
+      ],
+      "note": "备选活动，替换前需重新核对开放时间及路线。",
+      "note_message": {
+        "key": "alternatives_note",
+        "values": {}
+      }
+    }
+  ],
+  "messages": {
+    "conflicts": [],
+    "unknowns": [
+      {
+        "key": "room_terms",
+        "values": {}
+      }
+    ],
+    "notes": [
+      {
+        "key": "fare_assumption",
+        "values": {}
+      },
+      {
+        "key": "meal_assumption",
+        "values": {}
+      }
+    ]
+  },
+  "conflicts": [],
+  "unknowns": [
+    "需向旅舍核对入住日期的房价、空房、会员条件及押金"
+  ],
+  "notes": [
+    "车费使用公开成人价作估算。实际行车、步行和排队时间需出发前核对。",
+    "餐饮为每人每餐 HK$50 的规划预留。机票不计入预算。"
+  ],
+  "schema_version": 1,
+  "trip": {
+    "arrival": "2026-11-25T09:00+08:00",
+    "departure": "2026-11-26T20:00+08:00",
+    "party_size": 2,
+    "budget_hkd": "3500.00",
+    "interests": [
+      "艺术",
+      "博物馆"
+    ],
+    "must_visit": [
+      "香港藝術館"
+    ],
+    "walking": "normal",
+    "gateway": "airport"
+  },
+  "draft": {
+    "visits": [
+      {
+        "place_id": "art-museum",
+        "date": "2026-11-25",
+        "start": "11:15",
+        "end": "13:15"
+      },
+      {
+        "place_id": "history-museum",
+        "date": "2026-11-25",
+        "start": "14:15",
+        "end": "16:15"
+      },
+      {
+        "place_id": "hong-kong-park",
+        "date": "2026-11-26",
+        "start": "10:10",
+        "end": "12:10"
+      }
+    ],
+    "lodging_id": "mei-ho-house",
+    "alternatives": [
+      "science-museum"
+    ]
+  },
+  "run_id": "run-380f39447bf7436fad008164",
+  "attempt_id": "a1",
+  "version": 1,
+  "trip_id": "run-380f39447bf7436fad008164",
+  "parent_run_id": null
+}
