@@ -211,7 +211,7 @@ evidence       抓取 70 条官方记录，报告引用 24 条
 
 ### 仓库测试
 
-以下四组测试不需要 TACC，也不需要模型：
+以下五组测试不需要 TACC，也不需要模型：
 
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
@@ -221,12 +221,12 @@ python -B -m unittest discover -s tests -q      # 86 项：API、幂等、调度
 python -B -m unittest discover -s combined -q   #  8 项：supervisor 生命周期
 python -B -m unittest discover -s workflow -q   #  2 项：工作流契约
 python -B -m unittest discover -s trip -q       # 17 项：控制端、安装器、双语界面
-python -B -m unittest discover -s eval -q       # 11 项：用例文件与指标判定
+python -B -m unittest discover -s eval -q       # 14 项：用例文件与指标判定
 ```
 
 `trip/test_trip_ui.py` 使用 Streamlit 的 `AppTest`，单次运行有 3 秒超时；文件系统较慢时可能有一项抖动，单独重跑该组即可确认。
 
-`eval/test_eval.py` 是评测的离线部分：它校验 `eval/cases.json`，再对 `eval/fixtures/sample_run/`（一次真实运行的记录）执行指标与判定逻辑，无需消耗 GPU。
+`eval/test_eval.py` 是评测的离线部分：它校验 `eval/cases.json`，再对 `eval/fixtures/` 下的两份真实运行记录（`sample_run/` 无冲突方案、`infeasible_run/` 超预算方案）执行指标与判定逻辑，无需消耗 GPU。
 
 ### 评测用例
 

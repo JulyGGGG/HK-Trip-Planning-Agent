@@ -248,7 +248,7 @@ Three details decide whether a reproduction works:
 
 ### Repository tests
 
-The four suites below need no TACC access and no model:
+The five suites below need no TACC access and no model:
 
 ```bash
 python3 -m venv .venv && . .venv/bin/activate
@@ -258,12 +258,12 @@ python -B -m unittest discover -s tests -q      # 86 tests: API, idempotency, di
 python -B -m unittest discover -s combined -q   #  8 tests: supervisor lifecycle
 python -B -m unittest discover -s workflow -q   #  2 tests: workflow contract
 python -B -m unittest discover -s trip -q       # 17 tests: controller, installer, bilingual UI
-python -B -m unittest discover -s eval -q       # 11 tests: case file + metric/verdict logic
+python -B -m unittest discover -s eval -q       # 14 tests: case file, metric and verdict logic
 ```
 
 `trip/test_trip_ui.py` drives Streamlit's `AppTest`, which has a 3 s per-run timeout; on a slow filesystem one UI test can flake. Re-run that suite alone to confirm.
 
-`eval/test_eval.py` is the offline half of the evaluation: it validates `eval/cases.json` and then runs the metric and verdict logic against `eval/fixtures/sample_run/`, a real recorded run. It proves the harness without spending GPU time.
+`eval/test_eval.py` is the offline half of the evaluation: it validates `eval/cases.json` and then runs the metric and verdict logic against the two recorded runs under `eval/fixtures/` — `sample_run/` (a clean plan) and `infeasible_run/` (an over-budget plan). It proves the harness without spending GPU time.
 
 ### Evaluation cases
 
