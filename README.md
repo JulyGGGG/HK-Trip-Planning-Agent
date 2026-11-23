@@ -218,6 +218,34 @@ evidence       70 official records fetched, 24 cited in the report
 
 ## Detailed Instructions
 
+### Reproducing the results in five steps
+
+1. Complete **Getting Started steps 1–7**. The TACC client environment must exist and
+   the controller must answer on `127.0.0.1:8766`; `curl -s localhost:8766/api/health`
+   returns `{"ok": true, ...}`.
+2. Start from the repository root and activate the controller environment:
+   `. .venv/bin/activate`.
+3. Validate the case file without spending GPU time:
+   `python -B -m eval.run_eval --dry-run`.
+4. Run the suite:
+   `python -B -m eval.run_eval --cases eval/cases.json --out eval/results`.
+   Expect about two minutes per case once the model is warm, plus one ~20-minute cold
+   start; the suite may span two allocations because the supervisor stops admitting
+   steps after 45 minutes.
+5. Compare `eval/results/summary.json` with the recorded `eval/recorded/summary.json`.
+
+Three details decide whether a reproduction works:
+
+* `eval.run_eval` talks to the controller named by `--base-url` (default
+  `http://127.0.0.1:8766`) and writes only to `--out`.
+* `eval.replay` reads published artifacts from `--data-dir` (default `./data`). For a
+  release installed by `install.sh`, pass `--data-dir /opt/hk-trip-planner/data`. It
+  rebuilds the table without GPU time, but only against the controller database that
+  produced those runs.
+* `eval/runs.json` maps each case to a run id in that database. It is **not portable
+  to another account or machine**; a fresh account reproduces the numbers by running
+  step 4, not by replaying.
+
 ### Repository tests
 
 The four suites below need no TACC access and no model:

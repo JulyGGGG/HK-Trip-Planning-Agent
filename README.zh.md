@@ -195,6 +195,20 @@ evidence       抓取 70 条官方记录，报告引用 24 条
 
 ## 详细说明
 
+### 五步复现结果
+
+1. 先完成**快速开始的第 1–7 步**。TACC 客户端环境必须已建好，且控制器在 `127.0.0.1:8766` 上监听；`curl -s localhost:8766/api/health` 应返回 `{"ok": true, ...}`。
+2. 在仓库根目录激活控制端环境：`. .venv/bin/activate`。
+3. 不消耗 GPU 地校验用例文件：`python -B -m eval.run_eval --dry-run`。
+4. 运行整套：`python -B -m eval.run_eval --cases eval/cases.json --out eval/results`。模型热态下每条约 2 分钟，另加一次约 20 分钟的冷启动；由于 supervisor 在 45 分钟后停止接收新任务，整套可能跨两个 allocation。
+5. 把 `eval/results/summary.json` 与已记录的 `eval/recorded/summary.json` 对照。
+
+三个决定复现成败的细节：
+
+* `eval.run_eval` 请求 `--base-url` 指定的控制器（默认 `http://127.0.0.1:8766`），结果只写入 `--out`。
+* `eval.replay` 从 `--data-dir` 读取已发布产物（默认 `./data`）。用 `install.sh` 安装的版本需传 `--data-dir /opt/hk-trip-planner/data`。它不消耗 GPU 时间，但只能针对产生这些运行的那个控制器数据库。
+* `eval/runs.json` 把每条用例映射到该数据库中的运行号，**不能跨账号或跨机器使用**；新账号要通过第 4 步重跑，而不是回放。
+
 ### 仓库测试
 
 以下四组测试不需要 TACC，也不需要模型：
